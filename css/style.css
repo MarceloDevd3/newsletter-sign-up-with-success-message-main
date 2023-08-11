@@ -1,0 +1,391 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+@keyframes fadeLoading {
+    0% {
+      opacity: 0%;
+    }
+
+    50%{
+        opacity: 50%;
+    }
+
+    100%{
+        opacity: 100%;
+    }
+}
+
+
+.card {
+    animation: fadeLoading ease-in 3.5s ;
+}
+
+.success-card {
+    animation: fadeLoading ease-in 3.5s ;
+}
+
+:root {
+--Tomato: hsl(4, 100%, 67%);
+--Dark-Slate-Grey: hsl(234, 29%, 20%);
+--Charcoal-Grey: hsl(235, 18%, 26%);
+--Grey: hsl(231, 7%, 60%);
+--White: hsl(0, 0%, 100%);
+}
+
+body{
+ background-color: var(--White);
+}
+
+h1 {
+    font-size: 42px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.container .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.card .block-img {
+    width: 100%;
+    height:50vh;
+}
+
+.block-img {
+    background: url(../illustration-sign-up-mobile.svg);
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    border-bottom-left-radius:15px ;
+    border-bottom-right-radius:15px ;
+}
+
+
+
+
+.form-part {
+    padding: 15px;
+}
+
+.row {
+    display: flex;
+    margin: 25px 0 25px 0;
+}
+
+.row .icon {
+    width: 20px;
+    margin-right: 10px;
+}
+
+
+form {
+    padding: 10px;
+}
+
+label > input {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap; 
+}
+
+input {
+    border: 1px solid gainsboro;
+    margin-top: 10px;
+    width: 300px;
+    height: 50px;
+    border-radius: 7px;
+    margin-bottom: 10px;
+    padding-left: 20px;
+}
+
+
+input:focus{
+    outline: none;
+}
+
+input::placeholder{
+    padding-left: 2px;
+}
+
+button {
+    margin-top: 15px;
+    width: 300px;
+    height: 50px;
+    background-color: var(--Dark-Slate-Grey);
+    color: var(--White);
+    border: none;
+    border-radius: 7px;
+}
+
+button:hover {
+    background-color: var(--Tomato);
+}
+
+
+
+#hidden {
+    display: none;
+}
+
+.new-break {
+    display: none;
+}
+
+.success-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 40px;
+    padding: 55px;
+    padding-bottom: 0;
+}
+
+.icon img {
+    margin-bottom: 25px;
+}
+
+.success-card p {
+   line-height: 25px;
+    font-size: 13px;
+}
+
+.success-card .close {
+    width: 100%;
+   position: relative;
+   top: 15px;
+}
+
+
+
+
+
+@media  ( min-width: 1440px) {
+
+
+    body{
+        background-color:var(--Dark-Slate-Grey);
+       }
+
+
+    .container {
+        position: relative;
+        top: 15rem;
+        left: 27rem;
+    }
+    .container .card {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
+        
+    }
+
+    .card {
+        background-color: var(--White);
+        max-width: 840px;
+        max-height: 574px;
+       border-radius: 15px;
+       
+    }
+
+    .success-card .break {
+        display: none;
+    }
+
+    .new-break {
+        display: block;
+    }
+
+
+    .card .block-img {
+        width: 100%;
+        height:75vh;
+        position: relative;
+        bottom: -70px;
+        left: 120px;
+    }
+    .block-img {
+        background: url(../illustration-sign-up-desktop.svg);
+        background-size: 70%;
+        background-repeat: no-repeat;
+        border-radius: none;
+    }
+    
+
+
+    
+.form-part {
+    padding: 5px;
+    position: relative;
+    top: -15px;
+    left: 25px;
+}
+
+.row {
+    display: flex;
+    margin: 25px 0 25px 0;
+}
+
+.row .icon {
+    width: 20px;
+    margin-right: 10px;
+}
+
+
+form {
+    padding: 10px;
+}
+
+
+.success-card {
+    margin: 15rem auto;
+    padding-top: 45px;
+    padding-left: 35px;
+    width: 470px;
+    height: 470px;
+    background-color: var(--White);
+    border-radius: 15px;
+    font-size: 20px;
+}
+
+
+.success-card .close {
+    width: 95%;
+   position: relative;
+   top: -10px;
+   left: 5px;
+}
+
+    
+}
+
+
+
+/*@media  ( min-width: 1440px){
+    .container {
+        margin: 2.5rem 7rem;
+    }
+    
+    
+    .card {
+        background-color: white;
+        display: flex;
+        justify-content: space-between;
+        width: 740px;
+        height: 487px;
+        padding: 10px;
+        border-radius: 15px;
+    }
+    
+    .card .form-part {
+        align-self: flex-start;
+        padding-top: 45px;
+        padding-left: 30px;
+    }
+    
+    p {
+        width: 400px;
+        font-size: small;
+        margin-bottom: 15px;
+    }
+    
+    
+    .sing-up-img {
+        margin-left: -25px;
+    }
+    
+    .md {
+        margin-bottom: 15px;
+    }
+    
+    
+    
+    form input {
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+    }
+    
+    
+    
+    input {
+        margin-top:10px ;
+        border: 1px solid gray;
+        border-radius: 5px;
+        margin-bottom: 25px;
+    }
+    
+    input::placeholder {
+        padding-left: 20px;
+    }
+    
+    
+    button {
+        border-radius: 5px;
+        border: none;
+        color: var(--White);
+        background-color: var(--Dark-Slate-Grey);
+    }
+    .large {
+        width: 300px;
+        height: 50px;
+    }
+    
+    .icon {
+        margin-right: 5px;
+        width: 14px;
+    }
+    
+    .success-card {
+        margin: 10rem 20rem;
+        width: 345px;
+        height: 345px;
+        text-align: left;
+        padding: 30px;
+        background-color: var(--White);
+        border-radius: 15px;
+    }
+    
+    .icon img {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        width: 45px;
+    }
+    
+    .success-card > p {
+        margin-left: -2px;
+        width: 300px;
+        font-size: 13px;
+        line-height: 15px;
+        
+    }
+    
+    strong {
+        font-size: small;
+    }
+    
+    .close {
+        margin-top: -20px;
+        width: 275px;
+        height: 50px;
+        background-color: var(--Tomato);
+    }
+    
+    .close:hover  {
+        background-color: var(--Grey);
+    }
+     
+}*/
