@@ -17,11 +17,11 @@
 <main class="container">
   <article class="card fade">
     <div class="block-img">
-       
+       <img src="assets/images/illustration-sign-up-desktop.svg" alt="sign-up-image" class="desk">
     </div>
     <div class="form-part">
       <h1>Stay updated!</h1>
-      <p class="md">Join 60,000+ product managers receiving <br class="break">  <span class="left-0">monthlyupdates on:</span></p>
+      <p class="md">Join 60,000+ product managers receiving <br class="break">  <span class="left-0">monthly <br class="new-break">   updates on:</span></p>
       <p class="row">
         <img src="assets/images/icon-success.svg" alt="succ" class="icon">
         <span class="text">Product discovery and building what <br class="break"><span class="left-1"> matters</span> </span>
@@ -31,7 +31,7 @@
         <span class="text">Measuring to ensure updates are <br class="break">  <span class="left-1">a success</span></span>
       </p>
        <p class="row">
-       <img src="assets/images/icon-success.svg" alt="succ" class="icon">
+       <img src="assets/images/icon-success.svg" alt="succ" class="icon"> 
         <span class="text">And much more!</span>
       </p>
       
@@ -85,10 +85,11 @@ form.addEventListener('submit', function(e) {
                 visibility.style.display = 'block'
                 card.style.display = 'none'
                 emailInput.style.borderColor = 'black'
+                emailInput.classList.remove("place-red") 
             } else {
                 erroEmail.textContent = "valid email required";
                 emailInput.style.borderColor = 'red'
-             
+                emailInput.classList.add("place-red") 
             }
 }) 
 
