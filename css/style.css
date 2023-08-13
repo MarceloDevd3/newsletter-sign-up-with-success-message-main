@@ -248,6 +248,7 @@ button:hover {
     position: relative;
     top: -17px;
     left: 20px;
+    background-color:none;
 }
 
 .form-part .break {
