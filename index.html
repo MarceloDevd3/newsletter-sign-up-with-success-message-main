@@ -1,105 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   <link rel="stylesheet" href="css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <title>Frontend Mentor | Newsletter sign-up form with success message</title>
-
 </head>
 <body>
-  
-<main class="container">
-  <article class="card fade">
-    <div class="block-img">
-       <img src="assets/images/illustration-sign-up-desktop.svg" alt="sign-up-image" class="desk">
-    </div>
-    <div class="form-part">
-      <h1>Stay updated!</h1>
-      <p class="md">Join 60,000+ product managers receiving <br class="break">  <span class="left-0">monthly <br class="new-break">   updates on:</span></p>
-      <p class="row">
-        <img src="assets/images/icon-success.svg" alt="succ" class="icon">
-        <span class="text">Product discovery and building what <br class="break"><span class="left-1"> matters</span> </span>
-      </p>
-      <p class="row">
-        <img src="assets/images/icon-success.svg" alt="succ" class="icon">
-        <span class="text">Measuring to ensure updates are <br class="break">  <span class="left-1">a success</span></span>
-      </p>
-       <p class="row">
-       <img src="assets/images/icon-success.svg" alt="succ" class="icon"> 
-        <span class="text">And much more!</span>
-      </p>
+  <main>
+    <div id="container">
       
-      <form onclick="validarEmail()">
-        <label for="email">
-          Email address <span id="erroEmail" style="color: red; font-size: 10px; margin-left: 105px;"></span>
-          <input class="large" type="text" name="email" id="email" autocomplete="off" placeholder="email@company.com">
-        </label>
-        <button type="submit" class="large" >Subscribe to monthly newsletter</button>
-      </form>
-    </div>
-  </article> 
-</main>
+    <article class="card fade">
+      <div class="block-img">
+        <img src="assets/images/illustration-sign-up-desktop.svg" alt="sign-up-image" class="desk">
+      </div>
 
-<article class="success-card fade" id="hidden">
-  <div class="icon"><img src="assets/images/icon-success.svg" alt="succ"></div>
-  <h3>Thanks for <br> subscribing!</h3>
-  <p>  A confirmation email has been sent to  <br>  <strong>ash@loremcompany.com</strong> . 
-    Please open it and  <br class="break">  click <br class="new-break">  the button inside to confirm your  <br class="break">  subscription.</p>
+      <div id="form-part">
+        <h1>Stay updated!</h1>
+        <p class="md">Join 60,000+ product managers receiving <br class="break"> <span class="left-0">monthly <br
+              class="new-break"> updates on:</span></p>
+        <p class="row">
+          <img src="assets/images/icon-success.svg" alt="succ" class="icon">
+          <span class="text">Product discovery and building what <br class="break"><span class="left-1"> matters</span>
+          </span>
+        </p>
+        <p class="row">
+          <img src="assets/images/icon-success.svg" alt="succ" class="icon">
+          <span class="text">Measuring to ensure updates are <br class="break"> <span class="left-1">a
+              success</span></span>
+        </p>
+        <p class="row">
+          <img src="assets/images/icon-success.svg" alt="succ" class="icon">
+          <span class="text">And much more!</span>
+        </p>
+
+        <form>
+          <label for="email">
+            Email address <span id="erroEmail" style="color: red; font-size: 10px; margin-left: 105px;"></span>
+            <input class="large" type="text" name="email" id="email" autocomplete="off" placeholder="email@company.com">
+          </label>
+          <button type="submit" class="large">Subscribe to monthly newsletter</button>
+        </form>
+      </div>
+    </article>
+    </div>
+    
+  <article class="success-card fade" id="hidden">
+    <div class="icon"><img src="assets/images/icon-success.svg" alt="succ"></div>
+    <h3>Thanks for <br> subscribing!</h3>
+    <p class="space"> A confirmation email has been sent to <br> <strong>ash@loremcompany.com</strong> . <br id="fix">
+      Please open it and <br class="break"> click <br class="new-break"> the button inside to confirm your <br
+        class="break"> subscription.</p>
     <br> <br>
     <button class="close">Dismiss message</button>
-</article>
+  </article>
+  </main>
+
 
 
 </body>
 
-<script>
+<script src="./assets/js/formValidate.js"></script>
 
-
-let form = document.querySelector('form')
-
-let valid = document.getElementById('form')
-const card =  document.querySelector(".card")
-const visibility = document.getElementById("hidden");
-
-form.addEventListener('submit', function(e) {
-  e.preventDefault()
-  var emailInput = document.getElementById("email");
- 
-
-            var erroEmail = document.getElementById("erroEmail");
-            var email = emailInput.value;
-
-            // Expressão regular para validar o formato do email
-            var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-
-            if (emailPattern.test(email)) {
-                erroEmail.textContent = ""; // Limpa a mensagem de erro
-                // Aqui você pode adicionar código adicional para processar o email válido
-             
-                visibility.style.display = 'block'
-                card.style.display = 'none'
-                emailInput.style.borderColor = 'black'
-                emailInput.classList.remove("place-red") 
-            } else {
-                erroEmail.textContent = "valid email required";
-                emailInput.style.borderColor = 'red'
-                emailInput.classList.add("place-red") 
-            }
-}) 
-
-
-let btn = document.querySelector('.close')
-
-btn.addEventListener('click', function(e){
-  card.style.display = 'flex'
-  visibility.style.display = 'none'
-})
-
-</script>
 </html>
